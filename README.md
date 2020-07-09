@@ -2,7 +2,7 @@
 This docker image contains, **out of the box**, the haskell compiler along with the Haskell IDE Engine (HIE) running on an ubuntu base image.
 
 ## Who is this for
-This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandoned or *deprecated* projects combined with poor IDE tooling has made learning Haskell an 80/20 situation where 80% of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. 
+This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandoned or *deprecated* projects combined with poor IDE tooling has made learning Haskell an 80/20 situation where 80% of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. All that is required is Docker, WSL2 (for windows), and Visual Studio Code.
 
 ### What's installed?
 
@@ -21,7 +21,7 @@ This image is the result of my frustrations from trying to learn haskell. Haskel
   * Generate an hie.yaml file from a .cabal project file (optional)
 * code-server
   * Server/browser based VSCode
-  
+
 # How to use
 This image can be used in two ways: as a .devcontainer for VSCode, or as a standalone docker image
 
