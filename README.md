@@ -11,7 +11,9 @@ This image is the result of my frustrations from trying to learn haskell. Haskel
 * Stack 2.3.1
   * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
   * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
+  * It's a package manager
 * Cabal 3.2.0.0
+  * It's a package manager
 * Haskell IDE Engine 1.4
 * gen-hie
   * Generate a hie.yaml file from a .cabal project file (optional)
