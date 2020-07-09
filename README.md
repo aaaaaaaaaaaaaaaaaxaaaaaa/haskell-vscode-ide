@@ -16,20 +16,21 @@ This image is the result of my frustrations from trying to learn haskell. Haskel
 * Cabal 3.2.0.0
   * It's a package manager
 * Haskell IDE Engine 1.4
+  * The [Haskell Language Server](https://marketplace.visualstudio.com/items?itemName=alanz.vscode-hie-server) VSCode extension uses this to collect type data, lint data, etc
 * gen-hie
-  * Generate a hie.yaml file from a .cabal project file (optional)
+  * Generate an hie.yaml file from a .cabal project file (optional)
 * code-server
-  * Server/browser based Visual Studio Code 
+  * Server/browser based VSCode
   
 # How to use
-This image can be used in two ways: as a .devcontainer or as a standalone docker image
+This image can be used in two ways: as a .devcontainer for VSCode, or as a standalone docker image
 
 ## .devcontainer
 #### Info
-Visual Studio Code with the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension lets you use docker images. Docker images contain a virtualized environment for your language/project. When VS code opens a folder it looks for a ".devcontainer" folder. When it finds a .devcontainer folder, it reads the configuration file. From this file, Visual Studio Code then builds a container from a specific image, exposes any specified ports, and installs any specified Visual Studio Code extensions. It then maps the folder containing the .devcontainer as a volume inside the docker container. 
+Visual Studio Code with the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension lets you use docker images. Docker images contain a virtualized environment for your language/project. When VS code opens a folder it looks for a ".devcontainer" folder. When it finds a .devcontainer folder, it reads the configuration file. From this file, VSCode then builds a container from a specific image, exposes any specified ports, and installs any specified VSCode extensions. It then maps the folder containing the .devcontainer as a volume inside the docker container. 
 
 #### How do I use it
-Install the Remote Development extension, download the .devcontainer from this repo, drop it into whatever folder contains your haskell project. Reopen that folder in Visual Studio Code.
+Install the Remote Development extension, download the .devcontainer from this repo, drop it into whatever folder contains your haskell project. Reopen that folder in VSCode.
 
 ## Stand alone
 This image contains [code-server](https://github.com/cdr/code-server), which is a browser based version of VS Code. To start it, run the following docker command in powershell:
@@ -65,7 +66,7 @@ A wonderful explanation of both these tools is [Quick primer on Stack](https://w
 # Recommended workflow
 Don't compile! DON'T COMPILE!!! IT TAKES FOREVER. 
 
-The best workflow at this level is to use GHC in it's REPL mode. To do this, open the terminal in Visual Studio Code (Ctrl+Shift+\`) and type in `cabal repl`. Cabal will then process your projects cabal file, resolving/downloading any missing libraries/modules your project depends on, and then load GHC as a REPL. 
+The best workflow at this level is to use GHC in it's REPL mode. To do this, open the terminal in VSCode (Ctrl+Shift+\`) and type in `cabal repl`. Cabal will then process your projects cabal file, resolving/downloading any missing libraries/modules your project depends on, and then load GHC as a REPL. 
 
 Once you're in REPL mode (terminal says "Prelude >") you can then use the following commands:
 
