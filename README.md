@@ -31,11 +31,11 @@ Visual Studio Code with the [Remote Development](https://marketplace.visualstudi
 Install the Remote Development extension, download the .devcontainer from this repo, drop it into whatever folder contains your haskell project. Reopen that folder in Visual Studio Code.
 
 ## Stand alone
-This image contains [code-server](https://github.com/cdr/code-server), which is a browser based version of VS Code. To start it, run the following docker command:
+This image contains [code-server](https://github.com/cdr/code-server), which is a browser based version of VS Code. To start it, run the following docker command in powershell:
 
-`docker run -p 8000:8000 --rm lyxica/haskell-vscode-ide code-server` 
+`docker run -p 8000:8000 --rm -v ${PWD}:/workspace lyxica/haskell-vscode-ide code-server` 
 
-The VS code server will be accessible at http://127.0.0.1:8000
+It will mount the current directory at /workspace inside the container. The VS code server will be accessible at http://127.0.0.1:8000
 
 # Beginner FAQ
 ## How do I start a new empty project?
@@ -45,7 +45,6 @@ The VS code server will be accessible at http://127.0.0.1:8000
 If you tried to run `cabal init -n` without specifiyng a package name, cabal will use the name of folder it's being run inside of as the package name. This error arrises when the package name that cabal is trying to use has been used already by another package on hackage.haskell.org
 
 ## How I add new libraries/modules?
-#### Simple
 Add the desired package name to your projects cabal file under the "build-depends" field. Restart your REPL using Cabal to resolve the changes.
 
 e.g., lets say you wanted to add hex-text (process hex strings into bytestrings) to your new project, your cabal file would look like so:
