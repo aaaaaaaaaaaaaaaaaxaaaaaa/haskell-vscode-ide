@@ -2,26 +2,26 @@
 This docker image contains, **out of the box**, the haskell compiler along with the Haskell IDE Engine (HIE) running on an ubuntu base image.
 
 ## Who is this for
-This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandonded or *deprecated* projects combined with poor IDE tooling has made learning haskell an 80/20 situation where 80 of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. 
+This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandoned or *deprecated* projects combined with poor IDE tooling has made learning Haskell an 80/20 situation where 80% of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. 
 
-### Whats installed?
+### What's installed?
 * GHCup v0.1.5
-  * Allows for easily installing different versions of the haskell compiler
+  * Allows for easily installing different versions of the haskell compiler
 * GHC 8.6.5 ("base-4.12")
 * Stack 2.3.1
-  * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
-  * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
-  * It's a package manager
+  * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
+  * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
+  * It's a package manager
 * Cabal 3.2.0.0
-  * It's a package manager
+  * It's a package manager
 * Haskell IDE Engine 1.4
 * gen-hie
-  * Generate a hie.yaml file from a .cabal project file (optional)
+  * Generate a hie.yaml file from a .cabal project file (optional)
 * code-server
-  * Server/browser based Visual Studio Code 
-  
+  * Server/browser based Visual Studio Code 
+  
 # How to use
-This image can be used in two ways: as a .devcontainer or as a stand alone docker image
+This image can be used in two ways: as a .devcontainer or as a standalone docker image
 
 ## .devcontainer
 #### Info
@@ -42,22 +42,22 @@ It will mount the current directory at /workspace inside the container. The VS c
 `cabal init -n --package-name=your_project-name`
 
 ### I got the error `Error: no package name provided.`
-If you tried to run `cabal init -n` without specifiyng a package name, cabal will use the name of folder it's being run inside of as the package name. This error arrises when the package name that cabal is trying to use has been used already by another package on hackage.haskell.org
+If you tried to run `cabal init -n` without specifying a package name, cabal will use the name of the folder it's being run inside of as the package name. This error arises when the package name that cabal is trying to use has been used already by another package on hackage.haskell.org
 
-## How I add new libraries/modules?
+## How do I add new libraries/modules?
 Add the desired package name to your projects cabal file under the "build-depends" field. Restart your REPL using Cabal to resolve the changes.
 
-e.g., lets say you wanted to add hex-text (process hex strings into bytestrings) to your new project, your cabal file would look like so:
+e.g., let's say you wanted to add hex-text (process hex strings into bytestrings) to your new project, your cabal file would look like so:
 
 ```executable your_packages_name
-  main-is:             Main.hs
-  -- other-modules:
-  -- other-extensions:
-  build-depends:       base >=4.12, hex-text
-  -- hs-source-dirs:
-  default-language:    Haskell2010
-  ```
-  
+  main-is:             Main.hs
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.12, hex-text
+  -- hs-source-dirs:
+  default-language:    Haskell2010
+  ```
+  
 ## Stack? Cabal? Stackage... hackage...???
 A wonderful explanation of both these tools is [Quick primer on Stack](https://www.vacationlabs.com/haskell/environment-setup.html#quick-primer-on-stack) and [Hackage vs Stackage & Cabal vs Stack](https://www.vacationlabs.com/haskell/environment-setup.html#hackage-vs-stackage-cabal-vs-stack)
 
