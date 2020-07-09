@@ -59,7 +59,6 @@ e.g., let's say you wanted to add hex-text (process hex strings into bytestrings
   -- hs-source-dirs:
   default-language:    Haskell2010
 ```
-  
 ## Stack? Cabal? Stackage... hackage...???
 A wonderful explanation of both these tools is [Quick primer on Stack](https://www.vacationlabs.com/haskell/environment-setup.html#quick-primer-on-stack) and [Hackage vs Stackage & Cabal vs Stack](https://www.vacationlabs.com/haskell/environment-setup.html#hackage-vs-stackage-cabal-vs-stack)
 
