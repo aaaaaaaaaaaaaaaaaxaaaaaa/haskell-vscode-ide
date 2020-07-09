@@ -45,19 +45,34 @@ The VS code server will be accessible at http://127.0.0.1:8000
 If you tried to run `cabal init -n` without specifiyng a package name, cabal will use the name of folder it's being run inside of as the package name. This error arrises when the package name that cabal is trying to use has been used already by another package on hackage.haskell.org
 
 ## How I add new libraries/modules?
-Add 
+#### Simple
+Add the desired package name to your projects cabal file under the "build-depends" field. Restart your REPL using Cabal to resolve the changes.
+
+e.g., lets say you wanted to add hex-text (process hex strings into bytestrings) to your new project, your cabal file would look like so:
+
+```executable your_packages_name
+  main-is:             Main.hs
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.12, hex-text
+  -- hs-source-dirs:
+  default-language:    Haskell2010
+  ```
+
+#### I'm new to Haskell 
+
 
 ## Stack? Cabal? Stackage... hackage...???
 A wonderful explanation of both these tools is [Quick primer on Stack](https://www.vacationlabs.com/haskell/environment-setup.html#quick-primer-on-stack) and [Hackage vs Stackage & Cabal vs Stack](https://www.vacationlabs.com/haskell/environment-setup.html#hackage-vs-stackage-cabal-vs-stack)
 
 # Recommended workflow
-Don't compile!!! DON'T COMPILE!!! IT TAKES FOREVER.
+Don't compile! DON'T COMPILE!!! IT TAKES FOREVER. 
 
-The best way workflow at this level is to use GHC in it's REPL mode. To do this, open the terminal in Visual Studio Code (Ctrl+Shift+\`) and type in `cabal repl`. Cabal will then process your projects cabal file, resolving/downloading any missing libraries/modules your project depends on, and then load GHC as a REPL. 
+The best workflow at this level is to use GHC in it's REPL mode. To do this, open the terminal in Visual Studio Code (Ctrl+Shift+\`) and type in `cabal repl`. Cabal will then process your projects cabal file, resolving/downloading any missing libraries/modules your project depends on, and then load GHC as a REPL. 
 
 Once you're in REPL mode (terminal says "Prelude >") you can then use the following commands:
 
-:load filename.hs 
-:r - reloads the last loaded file
+* :load filename.hs 
+* :r - reloads the last loaded file
 
-Once you make a change, type in :r and then type in the function name you want to run.
+Once you make a change, type in :r and then type in the function you want to run.
