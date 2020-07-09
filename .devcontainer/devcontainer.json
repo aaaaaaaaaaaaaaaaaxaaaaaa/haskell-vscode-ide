@@ -1,0 +1,8 @@
+{
+    "image": "lyxica/haskell-vscode-ide",
+    "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+    "extensions": [
+		"justusadam.language-haskell",
+		"alanz.vscode-hie-server"
+  ]
+}
