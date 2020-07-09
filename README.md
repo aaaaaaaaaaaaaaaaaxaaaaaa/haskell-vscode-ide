@@ -18,17 +18,17 @@ This image is the result of my frustrations from trying to learn haskell. Haskel
 * code-server
   * Server/browser based Visual Studio Code 
   
-## How to use
+# How to use
 This image can be used in two ways: as a .devcontainer or as a stand alone docker image
 
-### .devcontainer
+## .devcontainer
 #### Info
 Visual Studio Code with the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension lets you use docker images. Docker images contain a virtualized environment for your language/project. When VS code opens a folder it looks for a ".devcontainer" folder. When it finds a .devcontainer folder, it reads the configuration file. From this file, Visual Studio Code then builds a container from a specific image, exposes any specified ports, and installs any specified Visual Studio Code extensions. It then maps the folder as a mounted volume inside the docker container. 
 
 #### How do I use it
 Install the Remote Development extension, download the .devcontainer from this repo, drop it into whatever folder contains your haskell project. Reopen that folder in Visual Studio Code.
 
-### Stand alone
+## Stand alone
 This image contains [code-server](https://github.com/cdr/code-server), which is a browser based version of VS Code. To start it, run the following docker command:
 
 `docker run -p 8000:8000 --rm lyxica/haskell-vscode-ide code-server` 
