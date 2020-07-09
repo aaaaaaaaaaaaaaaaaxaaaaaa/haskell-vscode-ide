@@ -2,9 +2,9 @@
 This docker image contains, **out of the box**, the haskell compiler along with the Haskell IDE Engine (HIE) running on an ubuntu base image.
 
 ## Who is this for
-This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandonded or *deprecated* projects combined with poor IDE tooling has made learning haskell an 80/20 situation where 80 of the effort has been spent on tooling. To make things simpler, I've come up with this docker image. 
+This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandonded or *deprecated* projects combined with poor IDE tooling has made learning haskell an 80/20 situation where 80 of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. 
 
-### Installed
+### Whats installed?
 * GHCup v0.1.5
   * Allows for easily installing different versions of the haskell compiler
 * GHC 8.6.5 ("base-4.12")
@@ -58,10 +58,7 @@ e.g., lets say you wanted to add hex-text (process hex strings into bytestrings)
   -- hs-source-dirs:
   default-language:    Haskell2010
   ```
-
-#### I'm new to Haskell 
-
-
+  
 ## Stack? Cabal? Stackage... hackage...???
 A wonderful explanation of both these tools is [Quick primer on Stack](https://www.vacationlabs.com/haskell/environment-setup.html#quick-primer-on-stack) and [Hackage vs Stackage & Cabal vs Stack](https://www.vacationlabs.com/haskell/environment-setup.html#hackage-vs-stackage-cabal-vs-stack)
 
