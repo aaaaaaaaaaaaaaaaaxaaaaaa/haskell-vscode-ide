@@ -5,20 +5,21 @@ This docker image contains, **out of the box**, the haskell compiler along with 
 This image is the result of my frustrations from trying to learn haskell. Haskell is a pretty cool language but the web of abandoned or *deprecated* projects combined with poor IDE tooling has made learning Haskell an 80/20 situation where 80% of the effort has been spent on tooling issues. To make things simpler, I've come up with this docker image. 
 
 ### What's installed?
+
 * GHCup v0.1.5
-  * Allows for easily installing different versions of the haskell compiler
+  * Allows for easily installing different versions of the haskell compiler
 * GHC 8.6.5 ("base-4.12")
 * Stack 2.3.1
-  * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
-  * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
-  * It's a package manager
+  * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
+  * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
+  * It's a package manager
 * Cabal 3.2.0.0
-  * It's a package manager
+  * It's a package manager
 * Haskell IDE Engine 1.4
 * gen-hie
-  * Generate a hie.yaml file from a .cabal project file (optional)
+  * Generate a hie.yaml file from a .cabal project file (optional)
 * code-server
-  * Server/browser based Visual Studio Code 
+  * Server/browser based Visual Studio Code 
   
 # How to use
 This image can be used in two ways: as a .devcontainer or as a standalone docker image
