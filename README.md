@@ -10,7 +10,7 @@ This image is the result of my frustrations from trying to learn haskell. Haskel
 * GHC 8.6.5 ("base-4.12")
 * Stack 2.3.1
   * Resolver set to [lts-14.27](https://www.stackage.org/lts-14.27)
-  * system-ghc set to true - Stack won't try to install isolated GHC instances. 
+  * system-ghc set to true - Stack won't try to install isolated GHC compilers. 
 * Cabal 3.2.0.0
 * Haskell IDE Engine 1.4
 * gen-hie
