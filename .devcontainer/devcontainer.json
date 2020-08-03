@@ -3,6 +3,6 @@
     "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
     "extensions": [
 		"justusadam.language-haskell",
-		"haskell.haskell"
+		"alanz.vscode-hie-server"
   ]
 }
